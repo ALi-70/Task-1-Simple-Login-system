@@ -1,0 +1,62 @@
+
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>DOCTOR SIGNUP PAGE</title>
+        <style type="text/css">
+        	.align{
+        		display: inline-block;
+        		margin-top: 10px;
+        		margin-right: 10px;
+        	}
+
+            .messages{
+                list-style-type: none;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <form method='POST' enctype="multipart/form-data">{% csrf_token %}
+        	<input type="text" name="FirstName" placeholder="First Name"/>
+        	<br>
+        	<input type="text" name="LastName" placeholder="Last Name"/>
+            <br>
+            <label for="pic">Enter Picture</label>
+        	<input type="file" name="ProfilePic" class="pic">
+        	
+        	<br>
+
+            <input type="text" name="UserName" placeholder="User Name"/>
+            <br>
+            <input type="text" name="Email" placeholder="Email id"/>
+            <br>
+            <input type="text" name="Password" placeholder="Password"/>
+            <br>
+            <input type="text" name="ConfirmPassword" placeholder="Confirm Password"/>
+            <br>
+            <input type="text" name="Address" placeholder="Address"/>
+
+           
+            <br>
+            <div class="align">
+            <input type="submit" name="btnSubmit" value="Submit"/>
+            </div>
+
+            
+
+            <div class="align">
+            <input type="reset" name="btnReset" value="Cancel"/> 
+            </div>
+            {% if messages %}
+             <ul class="messages">
+              {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+             </ul>
+            {% endif %}
+        </form>
+        </center>
+    </body>
+</html>

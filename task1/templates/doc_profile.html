@@ -1,0 +1,28 @@
+
+<html>
+    {% load static %}
+<head>
+</head>
+<body>
+	<center>
+<h1 id="a">
+    Doctor {{uid.username}}'s Profile 
+</h1>
+    
+    
+
+    <img src="{{ uid.image.url }}" class="img-responsive" style="border:solid red;height:100px; width:100px alig:"><br>
+
+    <div></div>
+    <div>{{uid.firstname}}</div>
+    <div>{{uid.lastname}}</div>
+    <div>{{uid.email}}</div>
+    <div>{{uid.address}}</div>
+
+ {% if 'uid' in request.session %}
+    <div><a href='{% url "lg" %}'>Logout</a></div>    
+ {% endif %}
+
+</center>
+</body>
+</html>

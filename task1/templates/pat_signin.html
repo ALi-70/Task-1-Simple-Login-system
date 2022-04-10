@@ -1,0 +1,23 @@
+
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>PATIENT SIGNUP PAGE</title>
+    </head>
+    <body>
+        <center>
+        <form method='POST'>{%csrf_token%}
+            
+
+            <input type="text" name="UserName" placeholder="User Name"/>
+            <input type="password" name="Password" placeholder="Password"/>
+
+           
+            
+            <input type="submit" name="btnSubmit" value="Submit"/>
+            <input type="reset" name="btnReset" value="Cancel"/> 
+        </form>
+    </center>
+    </body>
+</html>
+        
